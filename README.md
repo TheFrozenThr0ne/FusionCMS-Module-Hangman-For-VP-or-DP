@@ -1,6 +1,7 @@
 # WoW Hangman für FusionCMS 9.5.0
 
 Ein World-of-Warcraft-Hangman-Modul für **FusionCMS 9.5.0** mit Vote-Point- (VP) und Donation-Point-Belohnungen (DP).
+
 Ein portierte version von hhunderter/Hangman. Original project: https://github.com/hhunderter/Hangman
 
 <img width="863" height="541" alt="image" src="https://github.com/user-attachments/assets/2f74540c-2ff5-471c-8d57-e730cc0add1d" />
