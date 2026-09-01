@@ -1,0 +1,1 @@
+This package is a ported version of the original hhunderter/Hangman. Original project: https://github.com/hhunderter/Hangman

@@ -1,0 +1,52 @@
+{
+    "name": "Hangman",
+    "version": "1.1.0",
+    "description": "World of Warcraft Hangman with difficulty-based Vote Point and Donation Point rewards, guest preview, reward history and duplicate-payout protection.",
+    "fusion_version": "9.5.0",
+    "author": {
+        "name": "GamersCentral",
+        "website": "http:\/\/GamersCentral.de"
+    },
+    "menu": [
+        {
+            "name": "Hangman",
+            "link": "hangman",
+            "icon": "fa-gamepad"
+        }
+    ],
+    "admin_pages": [
+        {
+            "name": "Hangman words",
+            "link": "admin\/hangman",
+            "category": "Website",
+            "permission": "canManageWords"
+        },
+        {
+            "name": "Hangman settings",
+            "link": "admin\/hangman\/settings",
+            "category": "Website",
+            "permission": "canManageHangmanSettings"
+        },
+        {
+            "name": "Hangman highscores",
+            "link": "admin\/hangman\/highscores",
+            "category": "Website",
+            "permission": "canManageHangmanSettings"
+        }
+    ],
+    "permissions": {
+        "view": {
+            "name": "Can view and play Hangman",
+            "default": true
+        },
+        "canManageWords": {
+            "name": "Can manage Hangman words",
+            "default": false
+        },
+        "canManageHangmanSettings": {
+            "name": "Can manage Hangman settings and highscores",
+            "default": false
+        }
+    },
+    "enabled": true
+}
