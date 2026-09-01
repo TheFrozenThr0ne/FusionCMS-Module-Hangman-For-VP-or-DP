@@ -71,10 +71,11 @@ $config['reward_mythicplus_dp'] = 3;
 Other important values:
 
 ```php
-$config['guest_allow'] = 1;      // Guests may play, but do not receive points
-$config['reward_enabled'] = 1;   // Enable VP/DP rewards
-$config['guesses'] = 6;          // Allowed number of incorrect guesses
-$config['letter_buttons'] = 1;   // Display letter buttons
+$config['guest_allow'] = 1;            // Guests may play, but do not receive points
+$config['reward_enabled'] = 1;         // Enable VP/DP rewards
+$config['guesses'] = 6;                // Allowed number of incorrect guesses
+$config['letter_buttons'] = 1;         // Display letter buttons
+$config['reveal_initial_letter'] = 1;  // Reveal of one or more random letter at the start of each game
 ```
 
 ## Security
