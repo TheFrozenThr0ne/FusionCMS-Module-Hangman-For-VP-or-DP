@@ -159,7 +159,9 @@ class Hangman extends MX_Controller
             'health'=>max(1,min(6,(int)$this->hangman_model->getSetting('guesses',6))),
             'word_id'=>(int)$word['id'],
             'difficulty'=>$difficulty,
-            'letters'=>'',
+            // A hint is stored as an already-known letter. It is neither a
+            // guess nor a score event, but stays stable for this game.
+            'letters'=>$this->initialHintLetter((string)$word['text']),
             'rewarded'=>0,
             'reward_vp'=>0,
             'reward_dp'=>0
@@ -262,6 +264,20 @@ class Hangman extends MX_Controller
         $trans=iconv('UTF-8','ASCII//TRANSLIT//IGNORE',$word);
         $word=$trans!==false?$trans:$word;
         return preg_replace('/[^a-z]/','',$word)??'';
+    }
+
+    private function initialHintLetter(string $word): string
+    {
+        if ((int)$this->hangman_model->getSetting('reveal_initial_letter', 1) !== 1) {
+            return '';
+        }
+
+        $letters=array_values(array_unique(str_split($this->normalizeWord($word))));
+        if (!$letters) {
+            return '';
+        }
+
+        return $letters[random_int(0,count($letters)-1)];
     }
 
     private function lettersFromGame(array $game): array

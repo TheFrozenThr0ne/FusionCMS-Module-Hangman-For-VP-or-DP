@@ -31,6 +31,7 @@ $lang['days_old_del']='Delete abandoned games after (days)';
 $lang['color']='Drawing color';
 $lang['guest_allow']='Allow guests to play';
 $lang['letter_buttons']='Show letter buttons';
+$lang['reveal_initial_letter']='Reveal one letter at the start';
 $lang['rewards']='Rewards';
 $lang['reward_enabled']='Enable rewards';
 $lang['votePoints']='Vote Points';

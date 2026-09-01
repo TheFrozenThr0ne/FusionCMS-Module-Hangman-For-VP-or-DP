@@ -11,6 +11,7 @@
                     <dt>{lang('days_old_del','hangman')}</dt><dd>{$settings.days_old_del}</dd>
                     <dt>{lang('guest_allow','hangman')}</dt><dd>{if $settings.guest_allow}Enabled{else}Disabled{/if}</dd>
                     <dt>{lang('letter_buttons','hangman')}</dt><dd>{if $settings.letter_buttons}Enabled{else}Disabled{/if}</dd>
+                    <dt>{lang('reveal_initial_letter','hangman')}</dt><dd>{if $settings.reveal_initial_letter}Enabled{else}Disabled{/if}</dd>
                     <dt>{lang('reward_enabled','hangman')}</dt><dd>{if $settings.reward_enabled}Enabled{else}Disabled{/if}</dd>
                 </dl>
                 <h4>{lang('rewards','hangman')}</h4>

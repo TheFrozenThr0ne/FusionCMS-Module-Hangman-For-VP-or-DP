@@ -14,6 +14,7 @@ A ported version of hhunderter/Hangman. Original project: https://github.com/hhu
 * Protection against duplicate payouts per game
 * High scores and reward history
 * Optional guest play; guests do not receive VP or DP
+* Optional reveal of one random letter at the start of each game. (Hard +)
 * Settings exclusively through `config/hangman.php`
 * 150 additional WoW words: 15 per difficulty level and language
 

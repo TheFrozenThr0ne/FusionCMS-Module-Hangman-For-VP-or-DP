@@ -31,6 +31,7 @@ $lang['days_old_del']='Verlassene Spiele löschen nach (Tage)';
 $lang['color']='Zeichenfarbe';
 $lang['guest_allow']='Gästen das Spielen erlauben';
 $lang['letter_buttons']='Buchstaben-Buttons anzeigen';
+$lang['reveal_initial_letter']='Zu Beginn einen Buchstaben aufdecken';
 $lang['rewards']='Belohnungen';
 $lang['reward_enabled']='Belohnungen aktivieren';
 $lang['votePoints']='Vote Points';

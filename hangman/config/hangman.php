@@ -2,6 +2,7 @@
 $config['guest_allow'] = 1;
 $config['days_old_del'] = 30;
 $config['letter_buttons'] = 1;
+$config['reveal_initial_letter'] = 1;
 $config['color'] = '#000000';
 $config['guesses'] = 6;
 

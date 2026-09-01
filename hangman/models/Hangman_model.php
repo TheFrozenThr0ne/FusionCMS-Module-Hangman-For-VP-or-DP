@@ -14,6 +14,7 @@ class Hangman_model extends CI_Model
             'guest_allow' => (string)$this->config->item('guest_allow'),
             'days_old_del' => (string)$this->config->item('days_old_del'),
             'letter_buttons' => (string)$this->config->item('letter_buttons'),
+            'reveal_initial_letter' => (string)$this->config->item('reveal_initial_letter'),
             'color' => (string)$this->config->item('color'),
             'guesses' => (string)$this->config->item('guesses'),
             'reward_enabled' => (string)$this->config->item('reward_enabled'),
