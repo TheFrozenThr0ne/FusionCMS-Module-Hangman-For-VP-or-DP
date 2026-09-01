@@ -2,6 +2,8 @@
 
 Ein World-of-Warcraft-Hangman-Modul für **FusionCMS 9.5.0** mit Vote-Point- (VP) und Donation-Point-Belohnungen (DP).
 
+<img width="863" height="541" alt="image" src="https://github.com/user-attachments/assets/2f74540c-2ff5-471c-8d57-e730cc0add1d" />
+
 ## Funktionen
 
 - WoW-Wortliste in Deutsch und Englisch
