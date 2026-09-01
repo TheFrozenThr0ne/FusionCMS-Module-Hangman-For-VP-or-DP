@@ -1,9 +1,9 @@
 <?php
-$config['guest_allow'] = 1;
+$config['guest_allow'] = 0;
 $config['days_old_del'] = 30;
-$config['letter_buttons'] = 1;
+$config['letter_buttons'] = 0;
 $config['reveal_initial_letter'] = 1;
-$config['color'] = '#000000';
+$config['color'] = '#ffffff';
 $config['guesses'] = 6;
 
 $config['reward_enabled'] = 1;
@@ -17,13 +17,3 @@ $config['reward_medium_dp'] = 0;
 $config['reward_hard_dp'] = 1;
 $config['reward_mythic_dp'] = 2;
 $config['reward_mythicplus_dp'] = 3;
-
-$config['difficulties'] = [
-    1 => 'easy',
-    2 => 'medium',
-    3 => 'hard',
-    4 => 'mythic',
-    5 => 'mythicplus'
-];
-
-$config['csrf_token_name'] = 'undefined';

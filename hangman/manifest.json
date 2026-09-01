@@ -1,6 +1,6 @@
 {
     "name": "Hangman",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "World of Warcraft Hangman with difficulty-based Vote Point and Donation Point rewards, guest preview, reward history and duplicate-payout protection.",
     "fusion_version": "9.5.0",
     "author": {
