@@ -28,7 +28,6 @@ Ein World-of-Warcraft-Hangman-Modul für **FusionCMS 9.5.0** mit Vote-Point- (VP
 2. Importiere `sql/hangman.sql` in die Datenbank.
 3. Leere den FusionCMS-Cache.
 4. Öffne im Adminbereich **Modules** und aktiviere **Hangman**.
-5. Vergib bei Bedarf die Berechtigungen `view`, `canManageWords` und `canManageHangmanSettings`.
 
 ## VP und DP konfigurieren
 
@@ -65,10 +64,6 @@ $config['reward_enabled'] = 1;   // VP-/DP-Belohnungen aktivieren
 $config['guesses'] = 6;          // erlaubte Fehlversuche
 $config['letter_buttons'] = 1;   // Buchstaben-Schaltflächen anzeigen
 ```
-
-## Wortliste verwalten
-
-Im Adminbereich unter **Hangman words** kannst du Wörter ergänzen, bearbeiten oder löschen. Die Verwaltung unterstützt alle fünf Schwierigkeitsstufen.
 
 ## Sicherheit
 
