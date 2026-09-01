@@ -1,45 +1,45 @@
-# WoW Hangman für FusionCMS 9.5.0
+# WoW Hangman for FusionCMS 9.5.0
 
-Ein World-of-Warcraft-Hangman-Modul für **FusionCMS 9.5.0** mit Vote-Point- (VP) und Donation-Point-Belohnungen (DP).
+A World of Warcraft Hangman module for **FusionCMS 9.5.0** with Vote Point (VP) and Donation Point (DP) rewards.
 
-Eine portierte version von hhunderter/Hangman. Original project: https://github.com/hhunderter/Hangman
+A ported version of hhunderter/Hangman. Original project: https://github.com/hhunderter/Hangman
 
 <img width="863" height="541" alt="image" src="https://github.com/user-attachments/assets/2f74540c-2ff5-471c-8d57-e730cc0add1d" />
 
-## Funktionen
+## Features
 
-- WoW-Wortliste in Deutsch und Englisch
-- Fünf Schwierigkeitsstufen: Leicht, Mittel, Schwer, Mythic und MythicPlus
-- Serverseitig berechnete VP-/DP-Belohnungen
-- Schutz vor doppelten Auszahlungen pro Spiel
-- Highscores und Belohnungsverlauf
-- Optionales Spielen als Gast; Gäste erhalten keine VP oder DP
-- Einstellungen ausschließlich über `config/hangman.php`
-- 150 zusätzliche WoW-Wörter: 15 pro Stufe und Sprache
+* WoW word list in German and English
+* Five difficulty levels: Easy, Medium, Hard, Mythic, and MythicPlus
+* VP/DP rewards calculated server-side
+* Protection against duplicate payouts per game
+* High scores and reward history
+* Optional guest play; guests do not receive VP or DP
+* Settings exclusively through `config/hangman.php`
+* 150 additional WoW words: 15 per difficulty level and language
 
-## Voraussetzungen
+## Requirements
 
-- FusionCMS 9.5.0
-- PHP-Erweiterung `gd` für die Hangman-Grafik
-- Die Tabellenfelder `account_data.vp` und `account_data.dp`
-- Schreibrechte für FusionCMS-Module und `manifest.json`
+* FusionCMS 9.5.0
+* PHP `gd` extension for the Hangman graphics
+* The `account_data.vp` and `account_data.dp` table fields
+* Write permissions for FusionCMS modules and `manifest.json`
 
 ## Installation
 
-1. Lade das Modul in den Ordner `application/modules/hangman/` hoch.
-2. Importiere `sql/hangman.sql` in die Datenbank.
-3. Leere den FusionCMS-Cache.
-4. Öffne im Adminbereich **Modules** und aktiviere **Hangman**.
+1. Upload the module to the `application/modules/hangman/` directory.
+2. Import `sql/hangman.sql` into the database.
+3. Clear the FusionCMS cache.
+4. Open **Modules** in the admin panel and enable **Hangman**.
 
-## VP und DP konfigurieren
+## Configuring VP and DP
 
-Alle Spiel- und Reward-Einstellungen stehen hier:
+All game and reward settings are located here:
 
 ```php
 application/modules/hangman/config/hangman.php
 ```
 
-Beispiel:
+Example:
 
 ```php
 $config['reward_easy_vp'] = 1;
@@ -58,22 +58,22 @@ $config['reward_mythicplus_vp'] = 9;
 $config['reward_mythicplus_dp'] = 3;
 ```
 
-Weitere wichtige Werte:
+Other important values:
 
 ```php
-$config['guest_allow'] = 1;      // Gäste dürfen spielen, erhalten aber keine Punkte
-$config['reward_enabled'] = 1;   // VP-/DP-Belohnungen aktivieren
-$config['guesses'] = 6;          // erlaubte Fehlversuche
-$config['letter_buttons'] = 1;   // Buchstaben-Schaltflächen anzeigen
+$config['guest_allow'] = 1;      // Guests may play, but do not receive points
+$config['reward_enabled'] = 1;   // Enable VP/DP rewards
+$config['guesses'] = 6;          // Allowed number of incorrect guesses
+$config['letter_buttons'] = 1;   // Display letter buttons
 ```
 
-## Sicherheit
+## Security
 
-- Der Browser sendet keine Reward-Beträge.
-- Das Backend ermittelt Schwierigkeitsgrad, Sieg und Belohnung selbst.
-- Eine eindeutige `game_id` in `hangman_rewards` verhindert doppelte Auszahlungen.
-- Gäste werden weder in den persistenten Highscore aufgenommen noch belohnt.
+* The browser does not send reward amounts.
+* The backend determines the difficulty, win status, and reward itself.
+* A unique `game_id` in `hangman_rewards` prevents duplicate payouts.
+* Guests are neither added to the persistent high scores nor rewarded.
 
-## Lizenz und Markenhinweis
+## License and Trademark Notice
 
-World of Warcraft und alle zugehörigen Namen sind Marken von Blizzard Entertainment. Dieses Projekt steht in keiner Verbindung zu Blizzard Entertainment und wird von Blizzard weder unterstützt noch genehmigt.
+World of Warcraft and all related names are trademarks of Blizzard Entertainment. This project is not affiliated with, endorsed, or approved by Blizzard Entertainment.
