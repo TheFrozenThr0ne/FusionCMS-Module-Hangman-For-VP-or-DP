@@ -6,6 +6,15 @@ A ported version of hhunderter/Hangman. Original project: https://github.com/hhu
 
 <img width="863" height="541" alt="image" src="https://github.com/user-attachments/assets/2f74540c-2ff5-471c-8d57-e730cc0add1d" />
 
+
+Letter buttons
+
+<img width="587" height="150" alt="image" src="https://github.com/user-attachments/assets/1edbb161-63e2-4bbe-b98c-32104f041b4a" />
+
+or
+
+<img width="595" height="85" alt="image" src="https://github.com/user-attachments/assets/d885d4c1-df93-45f2-931e-d89e80d7d577" />
+
 ## Features
 
 * WoW word list in German and English
@@ -14,7 +23,7 @@ A ported version of hhunderter/Hangman. Original project: https://github.com/hhu
 * Protection against duplicate payouts per game
 * High scores and reward history
 * Optional guest play; guests do not receive VP or DP
-* Optional reveal of one random letter at the start of each game. (Hard +)
+* Optional reveal of one or more random letter at the start of each game for long/very long words.
 * Settings exclusively through `config/hangman.php`
 * 150 additional WoW words: 15 per difficulty level and language
 
@@ -62,10 +71,11 @@ $config['reward_mythicplus_dp'] = 3;
 Other important values:
 
 ```php
-$config['guest_allow'] = 1;      // Guests may play, but do not receive points
-$config['reward_enabled'] = 1;   // Enable VP/DP rewards
-$config['guesses'] = 6;          // Allowed number of incorrect guesses
-$config['letter_buttons'] = 1;   // Display letter buttons
+$config['guest_allow'] = 1;            // Guests may play, but do not receive points
+$config['reward_enabled'] = 1;         // Enable VP/DP rewards
+$config['guesses'] = 6;                // Allowed number of incorrect guesses
+$config['letter_buttons'] = 1;         // Display letter buttons
+$config['reveal_initial_letter'] = 1;  // Reveal of one or more random letter at the start of each game
 ```
 
 ## Security
