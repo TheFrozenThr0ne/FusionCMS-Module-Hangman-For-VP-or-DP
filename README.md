@@ -1,69 +1,80 @@
-# Hangman for FusionCMS 9.5.0 – WoW Rewards Edition
+# WoW Hangman für FusionCMS 9.5.0
 
-This package updates the supplied Hangman module with World of Warcraft words and a server-side reward system.
+Ein World-of-Warcraft-Hangman-Modul für **FusionCMS 9.5.0** mit Vote-Point- (VP) und Donation-Point-Belohnungen (DP).
 
-## Features
-- Vote Points as rewards.
-- Optional Donation Points as rewards.
-- Separate reward values for Easy / Medium / Hard.
-- Rewards only after a server-side verified win.
-- Duplicate payout protection using unique `hangman_rewards.game_id`.
-- Reward history in the Hangman admin settings page.
-- SQL schema.
-- Guest play with reward preview only.
-- World of Warcraft themed English and German word pools.
+## Funktionen
 
-## Default rewards
+- WoW-Wortliste in Deutsch und Englisch
+- Fünf Schwierigkeitsstufen: Leicht, Mittel, Schwer, Mythic und MythicPlus
+- Serverseitig berechnete VP-/DP-Belohnungen
+- Schutz vor doppelten Auszahlungen pro Spiel
+- Highscores und Belohnungsverlauf
+- Optionales Spielen als Gast; Gäste erhalten keine VP oder DP
+- Einstellungen ausschließlich über `config/hangman.php`
+- 150 zusätzliche WoW-Wörter: 15 pro Stufe und Sprache
 
-| Difficulty | Vote Points | Donation Points |
-|---|---:|---:|
-| Easy | 1 | 0 |
-| Medium | 2 | 0 |
-| Hard | 3 | 1 |
-| Mythic | 6 | 2 |
-| MythicPlus | 9 | 3 |
+## Voraussetzungen
 
-Change these values in `application/modules/hangman/config/hangman.php`.
+- FusionCMS 9.5.0
+- PHP-Erweiterung `gd` für die Hangman-Grafik
+- Die Tabellenfelder `account_data.vp` und `account_data.dp`
+- Schreibrechte für FusionCMS-Module und `manifest.json`
 
-## Guest behaviour
+## Installation
 
-If **Allow guests to play** is enabled, guests can play normally.
+1. Lade das Modul in den Ordner `application/modules/hangman/` hoch.
+2. Importiere `sql/hangman.sql` in die Datenbank.
+3. Leere den FusionCMS-Cache.
+4. Öffne im Adminbereich **Modules** und aktiviere **Hangman**.
+5. Vergib bei Bedarf die Berechtigungen `view`, `canManageWords` und `canManageHangmanSettings`.
 
-Guests never receive VP or DP and are not added to the persistent highscore. The reward shown on the page is a preview of what a logged-in account would receive.
+## VP und DP konfigurieren
 
-## Account currency
+Alle Spiel- und Reward-Einstellungen stehen hier:
 
-The reward code uses:
-- `account_data.vp` = Vote Points
-- `account_data.dp` = Donation Points
+```php
+application/modules/hangman/config/hangman.php
+```
 
-The module does not create these core columns. Your FusionCMS database must already provide them.
+Beispiel:
 
-## New installation
+```php
+$config['reward_easy_vp'] = 1;
+$config['reward_easy_dp'] = 0;
 
-1. Copy `hangman/` to `application/modules/`.
-2. Run `sql/hangman.sql`.
-3. Activate/install the module and assign its permissions.
-4. Configure rewards in `config/hangman.php`.
-5. Visit `/hangman`.
+$config['reward_medium_vp'] = 2;
+$config['reward_medium_dp'] = 0;
 
-## Existing installation
+$config['reward_hard_vp'] = 3;
+$config['reward_hard_dp'] = 1;
 
-Do not rerun the fresh-install SQL over a live database.
+$config['reward_mythic_vp'] = 6;
+$config['reward_mythic_dp'] = 2;
 
-1. Copy the updated `hangman/` module over the existing module.
-2. Run `sql/migration_rewards.sql` once.
-3. Run `sql/replace_words_wow.sql` if you want to replace the old word pool with the supplied WoW words.
-4. Configure rewards in `config/hangman.php`.
+$config['reward_mythicplus_vp'] = 9;
+$config['reward_mythicplus_dp'] = 3;
+```
 
-## Security
+Weitere wichtige Werte:
 
-The browser never sends the reward amount. PHP calculates it from the stored difficulty and server-side settings.
+```php
+$config['guest_allow'] = 1;      // Gäste dürfen spielen, erhalten aber keine Punkte
+$config['reward_enabled'] = 1;   // VP-/DP-Belohnungen aktivieren
+$config['guesses'] = 6;          // erlaubte Fehlversuche
+$config['letter_buttons'] = 1;   // Buchstaben-Schaltflächen anzeigen
+```
 
-A win is determined from the word stored in the database and the letters stored for the current game.
+## Wortliste verwalten
 
-A unique `game_id` in `hangman_rewards` prevents the same game from being paid twice.
+Im Adminbereich unter **Hangman words** kannst du Wörter ergänzen, bearbeiten oder löschen. Die Verwaltung unterstützt alle fünf Schwierigkeitsstufen.
 
-## Supplied archive note
+## Sicherheit
 
-The uploaded archive contained truncated controller/JavaScript files. This release supplies complete versions so the game, guest preview, reward logic and image endpoint work together.
+- Der Browser sendet keine Reward-Beträge.
+- Das Backend ermittelt Schwierigkeitsgrad, Sieg und Belohnung selbst.
+- Eine eindeutige `game_id` in `hangman_rewards` verhindert doppelte Auszahlungen.
+- Gäste werden weder in den persistenten Highscore aufgenommen noch belohnt.
+
+## Lizenz und Markenhinweis
+
+World of Warcraft und alle zugehörigen Namen sind Marken von Blizzard Entertainment. Dieses Projekt steht in keiner Verbindung zu Blizzard Entertainment und wird von Blizzard weder unterstützt noch genehmigt.
