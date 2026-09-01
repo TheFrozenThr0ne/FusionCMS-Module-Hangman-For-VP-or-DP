@@ -6,6 +6,15 @@ A ported version of hhunderter/Hangman. Original project: https://github.com/hhu
 
 <img width="863" height="541" alt="image" src="https://github.com/user-attachments/assets/2f74540c-2ff5-471c-8d57-e730cc0add1d" />
 
+
+Letter buttons
+
+<img width="587" height="150" alt="image" src="https://github.com/user-attachments/assets/1edbb161-63e2-4bbe-b98c-32104f041b4a" />
+
+or
+
+<img width="595" height="85" alt="image" src="https://github.com/user-attachments/assets/d885d4c1-df93-45f2-931e-d89e80d7d577" />
+
 ## Features
 
 * WoW word list in German and English
